@@ -1,0 +1,8 @@
+- model : authentication.customuser
+  pk: 1
+  fields:
+    email: hasint@gmail.com
+    password: pbkdf2_sha256$30000$M7a8IujevYFE$VpJqAGx4GXTfGw5K/pHogEZNizzrub2XyENGfWlgIqI=
+    is_superuser: True
+    is_active: True
+    is_staff: True

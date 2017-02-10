@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <ul>
+        {% for order in order_list %}
+            <li>Date: {{ order.created_at }}, Completed: {{ order.completed }}
+                <ul>
+                    {% for product in order.order_items.all %}
+                        <li>{{ product }} </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

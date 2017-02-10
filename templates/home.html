@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load webtags %}
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Recommended products</h1>
+    </div>
+    {% for object in products %}
+        <div class="item col-xs-4 col-md-4 col-lg-4">
+            <div class="thumbnail">
+                <a href="{{ object | to_model_name}}/{{ object.pk }}">
+                    <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                    <h4 class="group inner list-group-item-heading">
+                        {{ object }}
+                    </h4>
+                </a>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <p class="lead">
+                            {{ object.price }}$
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <a class="btn btn-success" href="{% url 'add_to_cart' object.pk %}">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

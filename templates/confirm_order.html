@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load webtags %}
+{% block content %}
+
+<div class="container">
+    <h1>Confirm your order</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product name</th>
+                <th>Quantity</th>
+                <th>Unit price</th>
+                <th>Total price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in baseproduct_list %}
+                <tr>
+                    {% cart_quantity request product %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <center>
+        <h1>Total price: {% cart_total request %}$</h1>
+        <div class="row">
+            <h3>Choose delivery option:</h3>
+            <!-- TODO: angular total based on these options -->
+            <form action="">
+                <input type="radio" value="courier">Courier</input> <br/>
+                <input type="radio" value="self-pickup">Self-pickup</input>
+            </form>
+        </div>
+        <br/>
+        <div class="row">
+            <a href="/create_order/">
+                <button class="btn btn-success">
+                    Send order
+                </button>
+            </a>
+        </div>
+    </center>
+</div>
+{% endblock %}

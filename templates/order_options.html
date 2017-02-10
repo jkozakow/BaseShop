@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load webtags %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-lg-6">
+            <h1>I do have an account</h1>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>{{ form.username.label }}</label>
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    <label>{{ form.password.label }}</label>
+                    {{ form.password }}
+                </div>
+                <center>
+                    <input class="btn btn-success btn-sm" type="submit" value="Login"/>
+                </center>
+                </p>
+                {% if form.errors %}
+                    <p>Error</p>
+                {% endif %}
+                <input type="hidden" name="next" value="{{ next }}"/>
+            </form>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-6">
+            <center>
+                <h1>I don't have an account</h1>
+                <a href="/anon_order">
+                    <button class="btn btn-info">Continue without registering</button>
+                </a>
+                <h1>Register</h1>
+                <a href="/register">
+                    <button class="btn btn-primary">Register</button>
+                </a>
+            </center>
+        </div>
+    </div>
+</div>
+{% endblock %}

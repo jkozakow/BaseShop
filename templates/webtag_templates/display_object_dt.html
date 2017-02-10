@@ -1,0 +1,15 @@
+{% load webtags %}
+{% spaceless %}
+    <dt>{{ object.desc }}:</dt>
+    {% if object.field_type == "TextField" %}
+        <dd id="do_{{ object.field_name }}">{{object.value|linebreaks}}</dd>
+    {% elif object.field_type == "ManyToManyField" %}
+        {% for item in object.value.all %}
+            <dd>{{ item }}</dd>
+        {% endfor %}
+    {% else %}
+        <dd id="do_{{ object.field_name }}">
+            {{ object.value|default:'<span class="text-muted">nie podano</span>' }}
+        </dd>
+    {% endif %}
+{% endspaceless %}

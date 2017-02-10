@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load webtags %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg12">
+            <h1>Your order</h1>
+            <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product name</th>
+                    <th>Quantity</th>
+                    <th>Unit price</th>
+                    <th>Total price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in baseproduct_list %}
+                    <tr>
+                        {% cart_quantity request product %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h1>Total price: {% cart_total request %}$</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12">
+            <h1>Fill form with shipping data</h1>
+            <form method="post" action="{% url 'anon_form' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <center>
+                    <input class="btn btn-success btn-sm" type="submit" value="Send order"/>
+                </center>
+                </p>
+                {% if form.errors %}
+                    <p>{{ form.error }}</p>
+                {% endif %}
+                <input type="hidden" name="next" value="{{ next }}"/>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,132 @@
+- model: baseshop.baseproduct
+  pk: 1
+  fields: {polymorphic_ctype: 14, name: E5-573g, price: 499.0, quantity: 12, recommended: true,
+    additional_spec: Black, created_at: !!timestamp '2017-02-08 21:57:46.621283+00:00',
+    updated_at: !!timestamp '2017-02-08 21:57:46.621308+00:00'}
+- model: baseshop.baseproduct
+  pk: 2
+  fields: {polymorphic_ctype: 14, name: 15-ay011nr, price: 519.0, quantity: 5, recommended: true,
+    additional_spec: '', created_at: !!timestamp '2017-02-08 22:33:19.205390+00:00',
+    updated_at: !!timestamp '2017-02-08 22:33:19.205413+00:00'}
+- model: baseshop.baseproduct
+  pk: 3
+  fields: {polymorphic_ctype: 14, name: K501UW-AB78, price: 819.0, quantity: 7, recommended: true,
+    additional_spec: '', created_at: !!timestamp '2017-02-08 22:35:36.336983+00:00',
+    updated_at: !!timestamp '2017-02-08 22:35:36.337008+00:00'}
+- model: baseshop.baseproduct
+  pk: 4
+  fields: {polymorphic_ctype: 16, name: G3, price: 299.0, quantity: 3, recommended: true,
+    additional_spec: '', created_at: !!timestamp '2017-02-08 22:38:11.660583+00:00',
+    updated_at: !!timestamp '2017-02-08 22:38:11.660613+00:00'}
+- model: baseshop.baseproduct
+  pk: 5
+  fields: {polymorphic_ctype: 16, name: Galaxy S7 Edge, price: 599.0, quantity: 9,
+    recommended: true, additional_spec: '', created_at: !!timestamp '2017-02-08 22:42:01.352112+00:00',
+    updated_at: !!timestamp '2017-02-08 22:42:01.352143+00:00'}
+- model: baseshop.baseproduct
+  pk: 6
+  fields: {polymorphic_ctype: 17, name: UE55KU6000, price: 599.0, quantity: 8, recommended: true,
+    additional_spec: Smart TV, created_at: !!timestamp '2017-02-08 22:47:27.740272+00:00',
+    updated_at: !!timestamp '2017-02-08 22:47:27.740294+00:00'}
+- model: baseshop.baseproduct
+  pk: 7
+  fields: {polymorphic_ctype: 17, name: 49LH570V, price: 299.0, quantity: 8, recommended: true,
+    additional_spec: '', created_at: !!timestamp '2017-02-08 22:48:17.880701+00:00',
+    updated_at: !!timestamp '2017-02-08 22:48:17.880736+00:00'}
+- model: baseshop.baseproduct
+  pk: 8
+  fields: {polymorphic_ctype: 17, name: 49PUS7101, price: 499.0, quantity: 3, recommended: true,
+    additional_spec: '', created_at: !!timestamp '2017-02-08 22:48:54.163389+00:00',
+    updated_at: !!timestamp '2017-02-08 22:48:54.163424+00:00'}
+- model: baseshop.tvmanufacturer
+  pk: 1
+  fields: {name: Samsung}
+- model: baseshop.tvmanufacturer
+  pk: 2
+  fields: {name: LG}
+- model: baseshop.tvmanufacturer
+  pk: 3
+  fields: {name: Philips}
+- model: baseshop.tv
+  pk: 6
+  fields: {manufacturer: 1, diagonal: '55', resolution: 3840 x 2160}
+- model: baseshop.tv
+  pk: 7
+  fields: {manufacturer: 2, diagonal: '49', resolution: 1920 x 1080}
+- model: baseshop.tv
+  pk: 8
+  fields: {manufacturer: 3, diagonal: '49', resolution: 3840 x 2160}
+- model: baseshop.processormanufacturer
+  pk: 1
+  fields: {name: Intel}
+- model: baseshop.processormanufacturer
+  pk: 2
+  fields: {name: Qualcomm}
+- model: baseshop.processormanufacturer
+  pk: 3
+  fields: {name: Samsung}
+- model: baseshop.processor
+  pk: 1
+  fields: {name: Core i5-5200U, manufacturer: 1, clock_frequency: 2.2 GHz, additional_spec: 3
+      MB Cache}
+- model: baseshop.processor
+  pk: 2
+  fields: {name: Core i5-6200U, manufacturer: 1, clock_frequency: 2.3GHz up to 2.8GHz,
+    additional_spec: 3MB L3 Cache}
+- model: baseshop.processor
+  pk: 3
+  fields: {name: Core i7-6500U, manufacturer: 1, clock_frequency: 2.5GHz (Turbo up
+      to 3.1GHz), additional_spec: Skylake}
+- model: baseshop.processor
+  pk: 4
+  fields: {name: Snapdragon 801, manufacturer: 2, clock_frequency: 2.5GHZ, additional_spec: 4
+      Cores}
+- model: baseshop.processor
+  pk: 5
+  fields: {name: Exynos 8890, manufacturer: 3, clock_frequency: 2.3GHz, additional_spec: 8
+      Cores}
+- model: baseshop.graphiccard
+  pk: 1
+  fields: {name: GeForce 940M, manufacturer: Nvidia, additional_spec: 2 GB of DDR3
+      VRAM}
+- model: baseshop.graphiccard
+  pk: 2
+  fields: {name: HD Graphics 520, manufacturer: Intel, additional_spec: ''}
+- model: baseshop.graphiccard
+  pk: 3
+  fields: {name: GeForce GTX 960M, manufacturer: Nvidia, additional_spec: ''}
+- model: baseshop.laptopmanufacturer
+  pk: 1
+  fields: {name: Acer}
+- model: baseshop.laptopmanufacturer
+  pk: 2
+  fields: {name: HP}
+- model: baseshop.laptopmanufacturer
+  pk: 3
+  fields: {name: ASUS}
+- model: baseshop.laptop
+  pk: 1
+  fields: {manufacturer: 1, processor: 1, ram: 8 GB DDR3L SDRAM, disk: 1 TB 5400 rpm
+      Hard Drive, graphic_card: 1, diagonal: '15.6'}
+- model: baseshop.laptop
+  pk: 2
+  fields: {manufacturer: 2, processor: 2, ram: 8 GB DDR3L SDRAM, disk: 256GB SSD,
+    graphic_card: 2, diagonal: '15.6'}
+- model: baseshop.laptop
+  pk: 3
+  fields: {manufacturer: 3, processor: 3, ram: 8GB, disk: 512GB SSD, graphic_card: 3,
+    diagonal: '15.6'}
+- model: baseshop.phonemanufacturer
+  pk: 1
+  fields: {name: LG}
+- model: baseshop.phonemanufacturer
+  pk: 2
+  fields: {name: Samsung}
+- model: baseshop.phone
+  pk: 4
+  fields: {manufacturer: 1, diagonal: '5.5', resolution: 1440 x 2560, processor: 4,
+    ram: 2GB, system: Android 4.4.2 KitKat}
+- model: baseshop.phone
+  pk: 5
+  fields: {manufacturer: 2, diagonal: '5.5', resolution: 2560 x 1440, processor: 5,
+    ram: 4GB, system: Android 6.0 Marshmallow}

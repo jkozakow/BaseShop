@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load webtags %}
+{% block content %}
+
+<div class="container">
+    <h1>Your cart</h1>
+    {% if baseproduct_list %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product name</th>
+                    <th>Quantity</th>
+                    <th>Unit price</th>
+                    <th>Total price</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in baseproduct_list %}
+                    <tr>
+                        {% cart_quantity request product %}
+                        <td>
+                            <a href="{% url 'add_to_cart' product.pk %}"><i class="fa fa-plus"></i></a></i>
+                            <a href="{% url 'del_from_cart' product.pk %}"><i class="fa fa-trash"></i></a></i>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h1>Total price: {% cart_total request %}$</h1>
+        <a href="/order_options/">
+        <button class="btn btn-success">
+            Choose order options
+        </button>
+    </a>
+    {% else %}
+        <p>Cart is empty.</p>
+    {% endif %}
+</div>
+{% endblock %}

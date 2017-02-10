@@ -1,0 +1,6 @@
+{% load webtags %}
+{% spaceless %}
+{% for field in fields %}
+	{% webtag_object_dt object field %}
+{% endfor %}
+{% endspaceless %}

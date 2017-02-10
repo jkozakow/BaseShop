@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <dl>
+        <dt>First name</dt>
+        <dd>{{ object.first_name }}</dd>
+        <dt>Last name</dt>
+        <dd>{{ object.last_name }}</dd>
+        <dt>Date joined</dt>
+        <dd>{{ object.date_joined }}</dd>
+        <dt>Email</dt>
+        <dd>{{ object.email }}</dd>
+        <dt>Address</dt>
+        <dd>{{ object.address }}</dd>
+    </dl>
+</div>
+{% endblock %}

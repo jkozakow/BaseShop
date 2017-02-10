@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load webtags %}
+{% block content %}
+
+<div class="container">
+    {% webtag_object_as_list object detail_list %}
+    <a href="{% url 'add_to_cart' object.pk %}">
+        <button class="btn btn-success">Add to cart</button>
+    </a>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% load webtags %}
+{% with request.resolver_match.url_name as url_name %}
+    <li role="presentation" class="{% if url_name == 'home' %} active {% endif %}">
+        <a href="/">Home</a>
+    </li>
+    {% for model in models %}
+        <li role="presentation" class="{% if url_name == model.0 %} active {% endif %}">
+            <a href="{% url model.0 %}">{{ model.1 }}</a>
+        </li>
+    {% endfor %}
+{% endwith %}
