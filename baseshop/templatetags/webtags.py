@@ -59,7 +59,7 @@ def cart_quantity(request, product):
         'quantity': quantity,
         'price': product.price,
         'total_price': product.price * quantity
-        }
+    }
 
 
 @register.simple_tag
@@ -84,4 +84,4 @@ def menu_tag(request, *products):
     return {
         'models': models,
         'request': request
-        }
+    }

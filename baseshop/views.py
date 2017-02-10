@@ -1,7 +1,6 @@
 from django.views.generic import DetailView, ListView, TemplateView
 from django.views.generic.edit import FormMixin
 from django.http import HttpResponseRedirect, Http404
-from django.shortcuts import render_to_response
 from rest_framework.viewsets import generics
 from baseshop.models import BaseProduct, Order, TV, Laptop, Phone
 from baseshop.forms import AnonymousOrderForm, ProductsSearchForm

@@ -122,6 +122,7 @@ class TVManufacturer(BaseManufacturer):
     class Meta:
         db_table = 'tv_manufacturer'
 
+
 TV_RES_CHOICES = (
     ('1366 x 768', 'HD'),
     ('1920 x 1080', 'Full HD'),
