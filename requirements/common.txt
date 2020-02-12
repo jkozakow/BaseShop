@@ -3,7 +3,7 @@ appdirs==1.4.0
 backports.shutil-get-terminal-size==1.0.0
 certifi==2017.1.23
 decorator==4.0.11
-Django==1.10.5
+Django==1.11.28
 django-debug-toolbar==1.5
 django-modeladmin-reorder==0.2
 django-polymorphic==1.1
